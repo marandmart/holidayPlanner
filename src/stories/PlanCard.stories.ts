@@ -13,7 +13,7 @@ const meta = {
     startDate: "2024-03-12",
     endDate: "2024-05-20",
     locations: "Maceio, AL",
-    participants: ["Pedro", "João"],
+    participants: "Pedro, João",
   },
 } satisfies Meta<typeof PlanCard>;
 
@@ -29,6 +29,6 @@ export const OneCard: Story = {
     startDate: "2024-03-12",
     endDate: "2024-05-20",
     locations: "Maceio, AL",
-    participants: ["Pedro", "João"],
+    participants: "Pedro, João",
   },
 };

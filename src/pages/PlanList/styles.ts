@@ -17,19 +17,28 @@ export const StyledMain = styled.main`
 `;
 
 export const StyledPlanList = styled.section`
-  display: grid;
+  display: flex;
   max-width: 1060px;
   margin: 32px auto;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: 40px calc(10% / 2);
+  flex-wrap: wrap;
+  width: 100%;
+  article {
+    width: 30%;
+  }
 
   @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 20px 10%;
+    article {
+      width: 45%;
+    }
   }
 
   @media (max-width: 576px) {
-    grid-template-columns: 1fr;
+    gap: 20px 0;
+    article {
+      width: 100%;
+    }
   }
 `;
 

@@ -5,5 +5,5 @@ export interface ITravelPlan {
   startDate: string;
   endDate: string;
   locations: string;
-  participants: string;
+  participants?: string;
 }

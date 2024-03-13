@@ -58,7 +58,7 @@ const PlanCard = ({
         <Info>Start date: {formatDate(startDate)}</Info>
         <Info>End date: {formatDate(endDate)}</Info>
         <Info>Locations: {locations}</Info>
-        <Info>Participants: {participants}</Info>
+        {!!participants && <Info>Participants: {participants}</Info>}
       </CardContentContainer>
     </CardContainer>
   );

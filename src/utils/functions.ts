@@ -13,7 +13,6 @@ const checkErrors = ({
   startDate,
   endDate,
   locations,
-  participants,
 }: Partial<ITravelPlan>): string[] => {
   let errors: string[] = [];
 
@@ -22,7 +21,6 @@ const checkErrors = ({
   if (!startDate) errors = [...errors, "No start date written"];
   if (!endDate) errors = [...errors, "No end date written"];
   if (!locations) errors = [...errors, "No locations written"];
-  if (!participants) errors = [...errors, "No participants written"];
 
   return errors;
 };

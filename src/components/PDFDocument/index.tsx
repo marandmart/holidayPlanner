@@ -7,7 +7,7 @@ interface PDFDocumentProps {
 }
 
 const PDFDocument = ({ data }: PDFDocumentProps) => {
-  const MAX_ITEMS_PER_PAGE = 3; // Maximum number of plans per page
+  const MAX_ITEMS_PER_PAGE = 3;
   const pages = [];
 
   for (let i = 0; i < data.length; i += MAX_ITEMS_PER_PAGE) {
@@ -30,9 +30,9 @@ const PDFDocument = ({ data }: PDFDocumentProps) => {
               <Text style={pageStyles.label}>Locations:</Text>
               <Text style={pageStyles.text}>{plan.locations}</Text>
               <Text style={pageStyles.label}>Participants:</Text>
-              <Text style={pageStyles.text}>
-                {plan.participants.join(", ")}
-              </Text>
+              {!!plan.participants && (
+                <Text style={pageStyles.text}>{plan.participants}</Text>
+              )}
             </View>
           ))}
         </Page>

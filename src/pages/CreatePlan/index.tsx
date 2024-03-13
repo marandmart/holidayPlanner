@@ -64,11 +64,7 @@ const CreatePlan = () => {
           required
         />
         <InputField label="locations" placeholder="Ex: Paris, Milan" required />
-        <InputField
-          label="participants"
-          placeholder="Ex: John, Paul"
-          required
-        />
+        <InputField label="participants" placeholder="Ex: John, Paul" />
         <DateInput type="ranged" />
         <Button type="submit">Adicionar viagem</Button>
       </Form>

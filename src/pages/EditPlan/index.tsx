@@ -111,7 +111,6 @@ const EditPlan = () => {
             value={participantsInput}
             onChange={(newText) => setParticipantsInput(newText)}
             label="participants"
-            required
           />
           <DateInput
             type="ranged"
