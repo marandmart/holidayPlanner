@@ -1,7 +1,7 @@
 import { StyledButton } from "./styles";
 
 interface ButtonProps {
-  children: string;
+  children?: string;
   onClick?: () => void;
   type?: "button" | "submit" | "reset";
   variation?: "primary" | "secondary";
