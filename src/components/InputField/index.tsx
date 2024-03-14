@@ -1,4 +1,4 @@
-import { StyledInput, StyledLabel } from "./styles";
+import { StyledInput, StyledLabel, StyledTextArea } from "./styles";
 
 type ChangeEventHandler = (value: string) => void;
 
@@ -7,7 +7,7 @@ interface InputFieldProps {
   onChange?: ChangeEventHandler;
   placeholder?: string;
   label?: string;
-  type?: "text" | "date";
+  type?: "text" | "textarea";
   required?: boolean;
 }
 
@@ -19,7 +19,11 @@ const InputField = ({
   type = "text",
   required = false,
 }: InputFieldProps) => {
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
     const value = e.target?.value;
 
     if (onChange) {
@@ -27,21 +31,31 @@ const InputField = ({
     }
   };
 
-  const pattern = type === "date" ? "dd-mm-yyyy" : undefined;
-
   return (
-    <StyledLabel>
-      {label}
-      <StyledInput
-        name={label}
-        placeholder={placeholder}
-        value={value}
-        type={type}
-        onChange={handleChange}
-        pattern={pattern}
-        required={required}
-      />
-    </StyledLabel>
+    <>
+      {type === "textarea" ? (
+        <StyledLabel>
+          {label}
+          <StyledTextArea
+            placeholder={placeholder}
+            onChange={handleChange}
+            value={value}
+          />
+        </StyledLabel>
+      ) : (
+        <StyledLabel>
+          {label}
+          <StyledInput
+            name={label}
+            placeholder={placeholder}
+            value={value}
+            type={type}
+            onChange={handleChange}
+            required={required}
+          />
+        </StyledLabel>
+      )}
+    </>
   );
 };
 

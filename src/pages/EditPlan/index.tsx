@@ -71,6 +71,7 @@ const EditPlan = () => {
             value={descriptionInput}
             onChange={(newText) => setDescriptionInput(newText)}
             label="description"
+            type="textarea"
             required
           />
 

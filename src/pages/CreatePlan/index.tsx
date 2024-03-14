@@ -26,6 +26,7 @@ const CreatePlan = () => {
         <InputField
           label="description"
           placeholder="Write a description"
+          type="textarea"
           required
         />
         <InputField label="locations" placeholder="Ex: Paris, Milan" required />

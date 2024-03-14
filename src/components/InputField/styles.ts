@@ -9,6 +9,17 @@ export const StyledInput = styled.input`
   margin-top: 8px;
 `;
 
+export const StyledTextArea = styled.textarea`
+  padding: 8px 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 4px;
+  border: 1px solid black;
+  font-size: 16px;
+  margin-top: 8px;
+  height: 80px;
+  resize: none;
+`;
+
 export const StyledLabel = styled.label`
   margin-bottom: 8px;
   font-family: Arial, Helvetica, sans-serif;
