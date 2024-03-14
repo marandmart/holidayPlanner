@@ -7,6 +7,13 @@ export const StyledMain = styled.main`
   margin: auto;
   padding: 0 40px;
 
+  .Dropdown-root {
+    margin-top: 16px;
+    max-width: 260px;
+    width: 100%;
+    align-self: flex-start;
+  }
+
   @media (max-width: 576px) {
     grid-template-columns: 1fr;
     padding: 0 20px;

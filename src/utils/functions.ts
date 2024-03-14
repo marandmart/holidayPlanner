@@ -1,10 +1,18 @@
 import { ITravelPlan } from "../interfaces/ITravelPlan";
 
-export const formatDate = (date: string) => {
+export const formatDateForViewing = (date: string) => {
   const newDate = new Date(date);
-  const day = newDate.getDate();
+  const day = newDate.getDate() + 1;
   const month = newDate.getMonth() + 1;
   return `${day < 10 ? `0${day}` : day}/${month < 10 ? `0${month}` : month}/${newDate.getFullYear()}`;
+};
+
+export const formatDateForDatePicker = (value: string) => {
+  const parts = value.split("-");
+  const year = parseInt(parts[0]);
+  const month = parseInt(parts[1]) - 1;
+  const day = parseInt(parts[2]);
+  return new Date(year, month, day);
 };
 
 const checkErrors = ({

@@ -7,8 +7,8 @@ interface DateInputProps {
   type: "single" | "ranged";
   name?: string;
   label?: string;
-  previousStartDate?: string;
-  previousEndDate?: string;
+  previousStartDate?: Date;
+  previousEndDate?: Date;
 }
 
 const DateInput = ({
@@ -19,10 +19,10 @@ const DateInput = ({
   previousEndDate,
 }: DateInputProps) => {
   const [startDate, setStartDate] = useState<Date | null>(
-    previousStartDate ? new Date(previousStartDate) : new Date()
+    previousStartDate ? previousStartDate : new Date()
   );
   const [endDate, setEndDate] = useState<Date | null>(
-    previousEndDate ? new Date(previousEndDate) : null
+    previousEndDate ? previousEndDate : null
   );
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
 

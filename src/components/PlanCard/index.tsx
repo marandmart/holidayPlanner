@@ -1,5 +1,5 @@
 import { ITravelPlan } from "../../interfaces/ITravelPlan";
-import { formatDate } from "../../utils/functions";
+import { formatDateForViewing } from "../../utils/functions";
 import Pencil from "./assets/pencil";
 import {
   CardContainer,
@@ -55,8 +55,8 @@ const PlanCard = ({
       <CardContentContainer>
         <Title>{title}</Title>
         <Description>{description}</Description>
-        <Info>Start date: {formatDate(startDate)}</Info>
-        <Info>End date: {formatDate(endDate)}</Info>
+        <Info>Start date: {formatDateForViewing(startDate)}</Info>
+        <Info>End date: {formatDateForViewing(endDate)}</Info>
         <Info>Locations: {locations}</Info>
         {!!participants && <Info>Participants: {participants}</Info>}
       </CardContentContainer>

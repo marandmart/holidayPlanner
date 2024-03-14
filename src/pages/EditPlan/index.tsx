@@ -6,7 +6,7 @@ import InputField from "../../components/InputField";
 import Button from "../../components/Button";
 import DateInput from "../../components/DateInput";
 import { StyledMain, WarningDiv } from "../CreatePlan/styles";
-import { validateForm } from "../../utils/functions";
+import { formatDateForDatePicker, validateForm } from "../../utils/functions";
 
 const EditPlan = () => {
   const { planId } = useParams();
@@ -114,8 +114,8 @@ const EditPlan = () => {
           />
           <DateInput
             type="ranged"
-            previousStartDate={startDate}
-            previousEndDate={endDate}
+            previousStartDate={formatDateForDatePicker(startDate)}
+            previousEndDate={formatDateForDatePicker(endDate)}
           />
           <Button type="submit">Finish Editing</Button>
         </Form>

@@ -11,7 +11,7 @@ import { StyledMain, WarningDiv } from "./styles";
 import { validateForm } from "../../utils/functions";
 
 const CreatePlan = () => {
-  const { addNewPlans } = useContext(TravelContext);
+  const { addNewTravelPlan } = useContext(TravelContext);
 
   const [errors, setErrors] = useState<string[]>([]);
 
@@ -36,7 +36,7 @@ const CreatePlan = () => {
       const [dayE, monthE, yearE] = endDate!.toString().split("/");
       const formattedEndDate = `${yearE}-${monthE}-${Number(dayE) + 1}`;
 
-      addNewPlans({
+      addNewTravelPlan({
         id: uuidv4(),
         title,
         description,

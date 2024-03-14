@@ -4,7 +4,7 @@ interface ButtonProps {
   children: string;
   onClick?: () => void;
   type?: "button" | "submit" | "reset";
-  variation?: "primary" | "secondary" | "terciary";
+  variation?: "primary" | "secondary";
 }
 
 const Button = ({

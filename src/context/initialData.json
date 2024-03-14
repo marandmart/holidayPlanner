@@ -6,7 +6,7 @@
     "startDate": "2024-03-12",
     "endDate": "2024-04-15",
     "locations": "Paris, France",
-    "participants": ["Alice", "Bob"]
+    "participants": "Alice, Bob"
   },
   {
     "id": "2",
@@ -15,7 +15,7 @@
     "startDate": "2024-03-12",
     "endDate": "2024-05-20",
     "locations": "Bali, Indonesia",
-    "participants": ["Charlie", "Diana", "Ethan"]
+    "participants": "Charlie, Diana, Ethan"
   },
   {
     "id": "3",
@@ -24,7 +24,7 @@
     "startDate": "2024-03-12",
     "endDate": "2024-06-10",
     "locations": "Kenya",
-    "participants": ["Frank", "Grace"]
+    "participants": "Frank, Grace"
   },
   {
     "id": "4",
@@ -33,7 +33,7 @@
     "startDate": "2024-03-12",
     "endDate": "2024-07-05",
     "locations": "Swiss Alps, Switzerland",
-    "participants": ["Henry"]
+    "participants": "Henry"
   },
   {
     "id": "5",
@@ -42,7 +42,7 @@
     "startDate": "2024-03-12",
     "endDate": "2024-08-15",
     "locations": "Japan",
-    "participants": ["Ivy", "Jack", "Katie"]
+    "participants": "Ivy, Jack, Katie"
   },
   {
     "id": "6",
@@ -51,7 +51,7 @@
     "startDate": "2024-03-12",
     "endDate": "2024-09-20",
     "locations": "United States",
-    "participants": ["Liam", "Mia", "Noah", "Olivia"]
+    "participants": "Liam, Mia, Noah, Olivia"
   },
   {
     "id": "7",
@@ -60,7 +60,7 @@
     "startDate": "2024-03-12",
     "endDate": "2024-10-10",
     "locations": "Greece",
-    "participants": ["Peter", "Quinn"]
+    "participants": "Peter, Quinn"
   },
   {
     "id": "8",
@@ -69,7 +69,7 @@
     "startDate": "2024-03-12",
     "endDate": "2024-11-05",
     "locations": "Canadian Rockies, Canada",
-    "participants": ["Rachel", "Sam"]
+    "participants": "Rachel, Sam"
   },
   {
     "id": "9",
@@ -78,7 +78,7 @@
     "startDate": "2024-03-12",
     "endDate": "2024-12-10",
     "locations": "Caribbean",
-    "participants": ["Tom", "Ursula", "Victor"]
+    "participants": "Tom, Ursula, Victor"
   },
   {
     "id": "10",
@@ -87,6 +87,6 @@
     "startDate": "2024-03-12",
     "endDate": "2025-01-15",
     "locations": "Southeast Asia",
-    "participants": ["Wendy"]
+    "participants": "Wendy"
   }
 ]

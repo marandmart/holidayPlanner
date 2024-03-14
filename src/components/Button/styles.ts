@@ -7,12 +7,10 @@ interface StyledButtonProps {
 export const StyledButton = styled.button<StyledButtonProps>`
   background-color: ${(props) =>
     props.$variation === "primary"
-      ? "#ff5300"
+      ? "#2563EB"
       : props.$variation === "secondary"
         ? "#0ab6eb"
-        : props.$variation === "terciary"
-          ? "#67b91a"
-          : undefined};
+        : null};
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
@@ -22,22 +20,18 @@ export const StyledButton = styled.button<StyledButtonProps>`
   &:hover {
     background-color: ${(props) =>
       props.$variation === "primary"
-        ? "#c44d11"
+        ? "#1E40AF"
         : props.$variation === "secondary"
           ? "#0b97c2"
-          : props.$variation === "terciary"
-            ? "#549616"
-            : undefined};
+          : null};
     cursor: pointer;
   }
   &:active {
     background-color: ${(props) =>
       props.$variation === "primary"
-        ? "#642100"
+        ? "#5699F0"
         : props.$variation === "secondary"
           ? "#096480"
-          : props.$variation === "terciary"
-            ? "#30580b"
-            : undefined};
+          : null};
   }
 `;

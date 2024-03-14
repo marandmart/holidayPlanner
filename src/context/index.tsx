@@ -1,19 +1,21 @@
-import { ReactElement, createContext, useState } from "react";
-import initialData from "./initialData.json";
+import { ReactElement, createContext } from "react";
 import { ITravelPlan } from "../interfaces/ITravelPlan";
+import { useTravelPlans } from "./hooks/useTravelPlans";
 
 interface TravelContextProps {
   travelPlans: ITravelPlan[];
-  addNewPlans: Function;
+  addNewTravelPlan: Function;
   removeTravelPlan: Function;
   udpateTravelPlan: Function;
+  orderTravelPlans: Function;
 }
 
 export const TravelContext = createContext<TravelContextProps>({
   travelPlans: [],
-  addNewPlans: () => {},
+  addNewTravelPlan: () => {},
   removeTravelPlan: () => {},
   udpateTravelPlan: () => {},
+  orderTravelPlans: () => {},
 });
 
 interface TravelProviderProps {
@@ -21,29 +23,22 @@ interface TravelProviderProps {
 }
 
 const TravelPlansProvider = ({ children }: TravelProviderProps) => {
-  const [travelPlans, setTravelPlans] = useState<ITravelPlan[]>(initialData);
-
-  const addNewTravelPlan = (newPlan: ITravelPlan) => {
-    setTravelPlans((prev) => [...prev, newPlan]);
-  };
-
-  const removeTravelPlan = (_id: string) => {
-    setTravelPlans((prev) => prev.filter(({ id }) => id !== _id));
-  };
-
-  const udpateTravelPlan = (updatedPlan: ITravelPlan) => {
-    setTravelPlans((prev) =>
-      prev.map((plan) => (plan.id !== updatedPlan.id ? plan : updatedPlan))
-    );
-  };
+  const {
+    travelPlans,
+    addNewTravelPlan,
+    removeTravelPlan,
+    udpateTravelPlan,
+    orderTravelPlans,
+  } = useTravelPlans();
 
   return (
     <TravelContext.Provider
       value={{
-        travelPlans: travelPlans,
-        addNewPlans: addNewTravelPlan,
-        removeTravelPlan: removeTravelPlan,
-        udpateTravelPlan: udpateTravelPlan,
+        travelPlans,
+        addNewTravelPlan,
+        removeTravelPlan,
+        udpateTravelPlan,
+        orderTravelPlans,
       }}
     >
       {children}
