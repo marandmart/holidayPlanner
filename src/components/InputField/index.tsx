@@ -37,9 +37,11 @@ const InputField = ({
         <StyledLabel>
           {label}
           <StyledTextArea
+            name={label}
             placeholder={placeholder}
             onChange={handleChange}
             value={value}
+            required={required}
           />
         </StyledLabel>
       ) : (

@@ -5,7 +5,13 @@
 - Install dependencies
 
 ```
-yarn
+yarn install
+```
+
+or
+
+```
+npm install
 ```
 
 After installed:
