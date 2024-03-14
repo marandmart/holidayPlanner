@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { fn } from "@storybook/test";
 import InputField from "../components/InputField";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -14,15 +13,26 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const WithoutText: Story = {
+export const Placeholder: Story = {
   args: {
-    onChange: fn(),
-    placeholder: "Write something",
+    placeholder: "Placeholder Text",
   },
 };
 
 export const WithText: Story = {
   args: {
     value: "Some text",
+  },
+};
+
+export const Label: Story = {
+  args: {
+    label: "Name",
+  },
+};
+
+export const Textarea: Story = {
+  args: {
+    type: "textarea",
   },
 };

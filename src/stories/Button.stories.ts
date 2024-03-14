@@ -20,3 +20,11 @@ export const Primary: Story = {
     children: "Click Me",
   },
 };
+
+export const Secondary: Story = {
+  args: {
+    onClick: fn(),
+    children: "Click Me",
+    variation: "secondary",
+  },
+};
