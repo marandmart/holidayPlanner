@@ -1,53 +1,18 @@
 import { useContext } from "react";
-import { useState } from "react";
 import Button from "../../components/Button";
 import DateInput from "../../components/DateInput";
 import Form from "../../components/Form";
 import InputField from "../../components/InputField";
 import { TravelContext } from "../../context";
-import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
 import { StyledMain, WarningDiv } from "./styles";
-import { validateForm } from "../../utils/functions";
+import useTravelForm from "../../hooks/useTravelForm";
 
 const CreatePlan = () => {
   const { addNewTravelPlan } = useContext(TravelContext);
 
-  const [errors, setErrors] = useState<string[]>([]);
-
+  const { errors, handleSubmit } = useTravelForm();
   const goTo = useNavigate();
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setErrors([]);
-
-    const { data, submitErrors } = validateForm(e);
-
-    const { title, description, startDate, endDate, locations, participants } =
-      data;
-
-    if (submitErrors.length > 0) {
-      setErrors(submitErrors);
-      return;
-    } else {
-      const [dayS, monthS, yearS] = startDate!.toString().split("/");
-      const formattedStartDate = `${yearS}-${monthS}-${Number(dayS) + 1}`;
-
-      const [dayE, monthE, yearE] = endDate!.toString().split("/");
-      const formattedEndDate = `${yearE}-${monthE}-${Number(dayE) + 1}`;
-
-      addNewTravelPlan({
-        id: uuidv4(),
-        title,
-        description,
-        startDate: formattedStartDate,
-        endDate: formattedEndDate,
-        locations,
-        participants,
-      });
-      goTo("/");
-    }
-  };
 
   return (
     <StyledMain>
@@ -56,7 +21,7 @@ const CreatePlan = () => {
       </Button>
 
       {errors.length > 0 && <WarningDiv>{errors.join(", ")}</WarningDiv>}
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={(e) => handleSubmit(e, addNewTravelPlan)}>
         <InputField label="title" placeholder="Give a title" required />
         <InputField
           label="description"

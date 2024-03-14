@@ -1,58 +1,29 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { TravelContext } from "../../context";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import Form from "../../components/Form";
 import InputField from "../../components/InputField";
 import Button from "../../components/Button";
 import DateInput from "../../components/DateInput";
 import { StyledMain, WarningDiv } from "../CreatePlan/styles";
-import { formatDateForDatePicker, validateForm } from "../../utils/functions";
+import { formatDateForDatePicker } from "../../utils/functions";
+import useTravelForm from "../../hooks/useTravelForm";
 
 const EditPlan = () => {
   const { planId } = useParams();
   const goTo = useNavigate();
+
+  if (!planId) goTo("/");
 
   const [currentId, setCurrentId] = useState<string>();
   const [titleInput, setTitleInput] = useState<string>();
   const [descriptionInput, setDescriptionInput] = useState<string>();
   const [locationsInput, setLocationsInput] = useState<string>();
   const [participantsInput, setParticipantsInput] = useState<string>();
-  const [errors, setErrors] = useState<string[]>([]);
-
-  if (!planId) goTo("/");
 
   const { travelPlans: plans, udpateTravelPlan } = useContext(TravelContext);
 
-  const onEditSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    const { data, submitErrors } = validateForm(e);
-
-    const { title, description, startDate, endDate, locations, participants } =
-      data;
-
-    if (submitErrors.length > 0) {
-      setErrors(submitErrors);
-      return;
-    } else {
-      const [dayS, monthS, yearS] = startDate!.toString().split("/");
-      const formattedStartDate = `${yearS}-${monthS}-${Number(dayS) + 1}`;
-
-      const [dayE, monthE, yearE] = endDate!.toString().split("/");
-      const formattedEndDate = `${yearE}-${monthE}-${Number(dayE) + 1}`;
-
-      udpateTravelPlan({
-        id: currentId,
-        title,
-        description,
-        startDate: formattedStartDate,
-        endDate: formattedEndDate,
-        locations,
-        participants,
-      });
-      goTo("/");
-    }
-  };
+  const { errors, handleSubmit } = useTravelForm();
 
   const {
     id,
@@ -62,7 +33,9 @@ const EditPlan = () => {
     endDate,
     locations,
     participants,
-  } = plans.find((plan) => plan.id === planId) || {};
+  } =
+    useMemo(() => plans.find((plan) => plan.id === planId), [planId, plans]) ||
+    {};
 
   if (
     id &&
@@ -87,7 +60,7 @@ const EditPlan = () => {
           Go to Home
         </Button>
         {errors.length > 0 && <WarningDiv>{errors.join(", ")}</WarningDiv>}
-        <Form onSubmit={onEditSubmit}>
+        <Form onSubmit={(e) => handleSubmit(e, udpateTravelPlan, currentId)}>
           <InputField
             value={titleInput}
             onChange={(newText) => setTitleInput(newText)}
