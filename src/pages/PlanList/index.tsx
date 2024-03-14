@@ -54,7 +54,7 @@ const PlanList = () => {
             </Button>
             <PDFDownloadLink
               document={<PDFDocument data={travelPlans} />}
-              fileName="example.pdf"
+              fileName="travel_plans.pdf"
             >
               {({ loading }) =>
                 loading ? "Loading document..." : "Download PDF"

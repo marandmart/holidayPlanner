@@ -12,7 +12,7 @@
     "id": "2",
     "title": "Beach Vacation in Bali",
     "description": "Relaxing getaway to enjoy the beautiful beaches and vibrant culture of Bali.",
-    "startDate": "2024-03-12",
+    "startDate": "2024-03-10",
     "endDate": "2024-05-20",
     "locations": "Bali, Indonesia",
     "participants": "Charlie, Diana, Ethan"
@@ -21,7 +21,7 @@
     "id": "3",
     "title": "Safari Adventure in Kenya",
     "description": "Experience the thrill of a safari and witness the breathtaking wildlife of Kenya.",
-    "startDate": "2024-03-12",
+    "startDate": "2024-05-12",
     "endDate": "2024-06-10",
     "locations": "Kenya",
     "participants": "Frank, Grace"
@@ -30,7 +30,7 @@
     "id": "4",
     "title": "Hiking in the Swiss Alps",
     "description": "An exhilarating hiking trip amidst the stunning scenery of the Swiss Alps.",
-    "startDate": "2024-03-12",
+    "startDate": "2024-01-11",
     "endDate": "2024-07-05",
     "locations": "Swiss Alps, Switzerland",
     "participants": "Henry"
@@ -39,54 +39,9 @@
     "id": "5",
     "title": "Cultural Tour of Japan",
     "description": "Immerse in the rich culture and traditions of Japan with visits to historic sites and vibrant cities.",
-    "startDate": "2024-03-12",
-    "endDate": "2024-08-15",
+    "startDate": "2025-01-12",
+    "endDate": "2025-08-15",
     "locations": "Japan",
     "participants": "Ivy, Jack, Katie"
-  },
-  {
-    "id": "6",
-    "title": "Road Trip Across America",
-    "description": "Embark on an epic road trip across the United States, exploring diverse landscapes and iconic landmarks.",
-    "startDate": "2024-03-12",
-    "endDate": "2024-09-20",
-    "locations": "United States",
-    "participants": "Liam, Mia, Noah, Olivia"
-  },
-  {
-    "id": "7",
-    "title": "Island Hopping in Greece",
-    "description": "Discover the beauty of the Greek islands with this island-hopping adventure.",
-    "startDate": "2024-03-12",
-    "endDate": "2024-10-10",
-    "locations": "Greece",
-    "participants": "Peter, Quinn"
-  },
-  {
-    "id": "8",
-    "title": "Skiing in the Canadian Rockies",
-    "description": "Hit the slopes and enjoy world-class skiing in the breathtaking Canadian Rockies.",
-    "startDate": "2024-03-12",
-    "endDate": "2024-11-05",
-    "locations": "Canadian Rockies, Canada",
-    "participants": "Rachel, Sam"
-  },
-  {
-    "id": "9",
-    "title": "Cruise in the Caribbean",
-    "description": "Relax and unwind on a luxurious cruise through the crystal-clear waters of the Caribbean.",
-    "startDate": "2024-03-12",
-    "endDate": "2024-12-10",
-    "locations": "Caribbean",
-    "participants": "Tom, Ursula, Victor"
-  },
-  {
-    "id": "10",
-    "title": "Backpacking in Southeast Asia",
-    "description": "Embark on a budget-friendly adventure through the enchanting landscapes of Southeast Asia.",
-    "startDate": "2024-03-12",
-    "endDate": "2025-01-15",
-    "locations": "Southeast Asia",
-    "participants": "Wendy"
   }
 ]
