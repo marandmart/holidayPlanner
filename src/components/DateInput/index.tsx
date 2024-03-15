@@ -45,6 +45,7 @@ const DateInput = ({
             todayButton="TODAY"
             showMonthDropdown
             showYearDropdown
+            showIcon
             scrollableYearDropdown
             minDate={new Date()}
           />
@@ -60,6 +61,7 @@ const DateInput = ({
             onChange={(date) => {
               if (date) setEndDate(date);
             }}
+            showIcon
             showMonthDropdown
             showYearDropdown
             scrollableYearDropdown
@@ -76,6 +78,7 @@ const DateInput = ({
             showMonthDropdown
             showYearDropdown
             scrollableYearDropdown
+            showIcon
             onChange={(date) => {
               if (date) setSelectedDate(date);
             }}
