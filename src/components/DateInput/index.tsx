@@ -1,6 +1,7 @@
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import "react-datepicker/dist/react-datepicker-cssmodules.css";
 import { StyledDateContainer, StyledSpan } from "./styles";
 
 interface DateInputProps {
@@ -41,6 +42,11 @@ const DateInput = ({
             onChange={(date) => {
               if (date) setStartDate(date);
             }}
+            todayButton="TODAY"
+            showMonthDropdown
+            showYearDropdown
+            scrollableYearDropdown
+            minDate={new Date()}
           />
           <StyledSpan>Data de volta: </StyledSpan>
           <DatePicker
@@ -54,6 +60,9 @@ const DateInput = ({
             onChange={(date) => {
               if (date) setEndDate(date);
             }}
+            showMonthDropdown
+            showYearDropdown
+            scrollableYearDropdown
           />
         </>
       )}
@@ -64,9 +73,13 @@ const DateInput = ({
             dateFormat="dd/MM/yyyy"
             selected={selectedDate}
             name={name}
+            showMonthDropdown
+            showYearDropdown
+            scrollableYearDropdown
             onChange={(date) => {
               if (date) setSelectedDate(date);
             }}
+            minDate={new Date()}
           />
         </>
       )}
